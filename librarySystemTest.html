@@ -8,31 +8,28 @@
     //It should work with dependencies that are created after the dependent library.
     //It should only run the callback function for each library only once.
 
-/*     (function (){
+    (function (){
 	var libraryStorage = {};
 
-	function librarySystem (libraryName, dependencies, callback) {
-
-		dependenciesArr = [];
-		if (arguments.length > 2){
-			for (let i = 0; i < dependencies.length; i++){
-					dependenciesArr.push(libraryStorage[dependencies[i]]);
-			}
-			libraryStorage[libraryName] = callback.apply(null, dependenciesArr);
-		} else if (arguments.length > 1){
-			libraryStorage[libraryName] = callback();
-		} else {
-			return libraryStorage[libraryName];
-		}
-	}
+	function librarySystem (libraryName, callback) {
+        if (arguments.length > 1){
+            libraryStorage[libraryName] = callback();
+        } else {
+            return libraryStorage[libraryName];
+        }
+    }
 	window.librarySystem = librarySystem;
-}
-)(); */
+    }
+    )();
 
 
     test({
         'It should create a library when when greater than one parameter is passed': function(){
+            librarySystem('app', function() {
+                return 'this library says hi'
+            });
 
+            eq('app' in libraryStorage, true);
         },
 
         'It should return a library when only one parameter is passed.': function(){
