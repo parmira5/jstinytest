@@ -1,0 +1,55 @@
+<script src= "tinytest.js"></script>
+<script>
+
+    //It should create a library when when greater than one parameter is passed.
+    //It should return a library when only one parameter is passed.
+    //it should accept an array with dependencies.
+    //It should pass those dependencies to the libarary
+    //It should work with dependencies that are created after the dependent library.
+    //It should only run the callback function for each library only once.
+
+/*     (function (){
+	var libraryStorage = {};
+
+	function librarySystem (libraryName, dependencies, callback) {
+
+		dependenciesArr = [];
+		if (arguments.length > 2){
+			for (let i = 0; i < dependencies.length; i++){
+					dependenciesArr.push(libraryStorage[dependencies[i]]);
+			}
+			libraryStorage[libraryName] = callback.apply(null, dependenciesArr);
+		} else if (arguments.length > 1){
+			libraryStorage[libraryName] = callback();
+		} else {
+			return libraryStorage[libraryName];
+		}
+	}
+	window.librarySystem = librarySystem;
+}
+)(); */
+
+
+    test({
+        'It should create a library when when greater than one parameter is passed': function(){
+
+        },
+
+        'It should return a library when only one parameter is passed.': function(){
+
+        },
+        'it should accept an array with dependencies.': function (){
+
+        },
+        'It should pass those dependencies to the libarary':function(){
+
+        },
+        'It should work with dependencies that are created after the dependent library.': function(){
+
+        },
+        'It should only run the callback function for each library only once.': function(){
+
+        }
+
+    });
+</script>
